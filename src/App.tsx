@@ -115,23 +115,23 @@ const slides: Slide[] = [
             {
               name: "김태경",
               role: "팀장 / 백엔드 리더",
-              desc: "프로젝트 총괄, 백엔드 구조 설계 및 데이터베이스 관리",
+              desc: "PM, (인증,유저,후기, 알람, 호스트, AI 매칭)API 개발, 후반 인프라 담당",
               img: "https://cdn-icons-png.flaticon.com/512/4140/4140048.png",
             },
             {
               name: "손성열",
               role: "프론트엔드 리더",
-              desc: "전체 UI 설계, 프레젠테이션 페이지 및 주요 컴포넌트 개발",
+              desc: "사용자(서비스) 페이지 제작 / 프론트 배포 CICD 파이프라인 설계",
               img: "https://cdn-icons-png.flaticon.com/512/4140/4140037.png",
             },
             {
               name: "홍지현",
               role: "프론트엔드 개발자",
-              desc: "온보딩 및 로그인 기능 개발, UX 최적화",
+              desc: "Figma 플로우 및 디자인 담당 / 디자인시스템 기반 공통 UI/UX 컴포넌트 제작 / 호스트(어드민) 페이지 제작",
               img: "https://cdn-icons-png.flaticon.com/512/4140/4140047.png",
             },
             {
-              name: "최광옥",
+              name: "최광욱",
               role: "프론트엔드 개발자",
               desc: "파티 리스트 / 상세 페이지 구현 및 상태관리 담당",
               img: "https://cdn-icons-png.flaticon.com/512/4140/4140050.png",
@@ -139,13 +139,13 @@ const slides: Slide[] = [
             {
               name: "김동현",
               role: "백엔드 개발자",
-              desc: "AI 매칭 API 설계, 매칭 로직 및 REST 통신 구조 담당",
+              desc: "파티 CRUD , 이미지 업로드(S3)API 개발",
               img: "https://cdn-icons-png.flaticon.com/512/4140/4140052.png",
             },
             {
               name: "김현빈",
               role: "인프라 담당",
-              desc: "AWS, Docker 환경 구축 및 자동 배포 파이프라인 구성",
+              desc: "초기 AWS, Docker 환경 구축 및 자동 배포 파이프라인 구성",
               img: "https://cdn-icons-png.flaticon.com/512/4140/4140038.png",
             },
           ].map((member) => (
@@ -522,6 +522,123 @@ const slides: Slide[] = [
       </motion.div>
     ),
   },
+
+  // ⚙️ BACKEND
+  {
+    id: "backend",
+    label: "Backend",
+    content: (
+      <motion.div className="max-w-5xl text-center mx-auto scale-[1.2] origin-top">
+        <h2 className="text-5xl font-bold text-gray-900 mb-8">
+          백엔드 구조 & 설계
+        </h2>
+
+        <p className="text-gray-700 text-lg mb-10 leading-relaxed max-w-3xl mx-auto">
+          MingleUp의 백엔드는 <b>단순성과 확장성</b>의 균형을 맞춘 <br/>
+          <span className="text-pink-500 font-semibold"> 계층형 아키텍처 (Layered Architecture)</span> 기반으로 설계되었습니다.
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-8 text-left">
+          {/* 아키텍처 */}
+          <div className="rounded-3xl border border-pink-100 p-6 shadow-sm bg-white/80">
+            <h3 className="text-pink-600 font-semibold mb-3">🏗 프로젝트 설계</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              초기에는 <b>DDD(Domain Driven Design)</b>을 고려했지만,  
+              프로젝트 규모와 개발 일정, 팀 구조를 분석한 결과  
+              <b>계층형 구조 (Layered Architecture)</b>가 더 적합하다고 판단했습니다.<br /><br />
+              Controller → Service → Repository 계층을 명확히 분리해  
+              유지보수성과 테스트 효율을 확보했습니다.
+            </p>
+          </div>
+
+          {/* 사용자 보안 */}
+          <div className="rounded-3xl border border-pink-100 p-6 shadow-sm bg-white/80">
+            <h3 className="text-pink-600 font-semibold mb-3">🔐 사용자 보안</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              사용자 인증은 <b>JWT (JSON Web Token)</b>을 활용해 구현했습니다.<br />
+              초기에는 JWE(JSON Web Encryption)도 검토했으나,  
+              서비스 특성상 <b>성능과 단순성</b>을 우선하여 JWT를 채택했습니다.<br /><br />
+              모든 요청은 인증 필터를 통해 검증되며,  
+              민감 정보는 암호화 후 저장됩니다.
+            </p>
+          </div>
+
+          {/* 이미지 처리 */}
+          <div className="rounded-3xl border border-pink-100 p-6 shadow-sm bg-white/80">
+            <h3 className="text-pink-600 font-semibold mb-3">🖼 이미지 처리</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              이미지 업로드는 <b>AWS S3 Presigned URL</b> 방식을 사용해  
+              서버를 거치지 않고 직접 업로드되도록 구현했습니다.<br />
+              이를 통해 <b>트래픽 부하를 최소화</b>하고  
+              업로드 속도를 크게 개선했습니다.
+            </p>
+          </div>
+        </div>
+
+        <p className="text-pink-500 mt-10 font-semibold italic">
+          “복잡한 설계보다, 명확한 구조가 팀 협업을 빠르게 만든다.”
+        </p>
+      </motion.div>
+    ),
+  },
+
+
+  // 💡 FEATURES
+  {
+    id: "features",
+    label: "Features",
+    content: (
+      <motion.div className="max-w-6xl mx-auto text-center scale-[1.2] origin-top">
+        <h2 className="text-5xl font-bold text-gray-900 mb-8">
+          주요 기능 & 기술 설명
+        </h2>
+        <p className="text-gray-700 text-lg mb-10 leading-relaxed max-w-3xl mx-auto">
+          MingleUp은 AI 매칭과 카카오 연동, 그리고 보안 중심의 구조로 사용자 경험을 완성했습니다.
+        </p>
+
+        {/* 주요 기능 블록 */}
+        <div className="grid md:grid-cols-2 gap-8 text-left">
+          {/* 핵심 기능 - AI 매칭 */}
+          <div className="border border-pink-100 rounded-3xl p-6 shadow-sm bg-white/80">
+            <h3 className="text-pink-600 font-semibold mb-3">🤖 핵심 기능 - AI 매칭 로직</h3>
+            <p className="text-gray-600 text-sm leading-relaxed mb-3">
+              ChatGPT API를 기반으로, 참가자 간 성향·취향·대화 톤을 분석하여
+              매칭 점수를 계산합니다.  <br />
+              <b>AI Matching Engine</b>은 사용자별 <b>케미 지수</b>를 생성하여
+              자연스러운 연결을 유도합니다.
+            </p>
+          </div>
+
+          {/* 카카오 API */}
+          <div className="border border-pink-100 rounded-3xl p-6 shadow-sm bg-white/80">
+            <h3 className="text-pink-600 font-semibold mb-3">💬 카카오 API 연동</h3>
+            <ul className="text-gray-600 text-sm leading-relaxed space-y-2">
+              <li>• 카카오 로그인: 간편 인증으로 사용자 접근성 향상</li>
+              <li>• 카카오 알림톡: 매칭 결과를 실시간으로 전달</li>
+              <li>• 카카오 맵: 구현 완료, 단 <b>보안 이슈</b>로 상세 페이지에는 미적용</li>
+            </ul>
+          </div>
+
+          {/* 웹 부가 기능 */}
+          <div className="border border-pink-100 rounded-3xl p-6 shadow-sm bg-white/80">
+            <h3 className="text-pink-600 font-semibold mb-3">🌐 웹 부가 기능</h3>
+            <ul className="text-gray-600 text-sm leading-relaxed space-y-2">
+              <li>• HTTPS SSL 적용을 통한 보안 통신</li>
+              <li>• JWT 인증으로 세션 유지 및 토큰 검증</li>
+              <li>• 불온한 참여자 방지를 위한 평점 시스템 (호스트 전용)</li>
+              <li>• 모바일 반응형 대응 — <b>v2</b>에서 PWA 확장 예정</li>
+              <li>• 호스트 가입 승인 절차 — <b>이메일 기반 수동 승인</b> (v2 계획)</li>
+            </ul>
+          </div>
+        </div>
+
+        <p className="text-pink-500 mt-12 font-semibold italic">
+          “기능은 많지만, 사용자는 단순해야 한다 — 이것이 MingleUp의 철학입니다.”
+        </p>
+      </motion.div>
+    ),
+  },
+
 
   // 🎬 DEMO
   {
