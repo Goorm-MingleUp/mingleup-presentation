@@ -52,7 +52,7 @@ const slides: Slide[] = [
           발표 목차
         </h2>
         <p className="text-gray-600 mb-10 text-lg">
-          오늘 발표는 MingleUp의 <span className="text-pink-500 font-semibold">배경 → 문제 → 해결 → 기술 → 사람 → 비전</span> 순으로 진행됩니다.
+          
         </p>
   
         <div className="grid md:grid-cols-2 gap-6 text-left">
