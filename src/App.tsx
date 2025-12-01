@@ -280,7 +280,7 @@ const slides: Slide[] = [
     content: (
       <motion.div className="max-w-6xl mx-auto text-center">
         <h2 className="text-5xl font-bold text-gray-900 mb-10">
-          사용자 여정 (User Flow)
+          유저 플로우
         </h2>
         <p className="text-gray-700 text-lg mb-12 leading-relaxed max-w-3xl mx-auto">
           MingleUp은 사용자의 데이터 입력부터 실제 만남까지,  
@@ -535,7 +535,7 @@ const slides: Slide[] = [
     content: (
       <motion.div className="max-w-5xl mx-auto text-center">
         <h2 className="text-5xl font-bold text-gray-900 mb-8">
-          시연 영상 (Demo)
+          시연 영상
         </h2>
 
         <p className="text-gray-700 text-lg mb-10 leading-relaxed max-w-3xl mx-auto">
@@ -764,7 +764,7 @@ function NavBar({ items, current, onJump }: NavBarProps) {
       <div className="mx-auto max-w-7xl px-6 py-3 flex items-center justify-between">
         {/* 왼쪽 로고 */}
         <button onClick={() => onJump(0)} className="flex items-center gap-3">
-          <img src="/Logo.svg" alt="MingleUp Logo" className="h-10 w-auto" />
+          <img src="./Logo.svg" alt="MingleUp Logo" className="h-10 w-auto" />
           <span className="font-bold text-gray-800 text-lg">MingleUp</span>
         </button>
 
