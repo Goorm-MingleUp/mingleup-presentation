@@ -19,7 +19,7 @@ const slides: Slide[] = [
     id: "home",
     label: "Home",
     content: (
-      <motion.div className="text-center max-w-4xl mx-auto">
+      <motion.div className="text-center max-w-4xl mx-auto scale-[1.2] origin-top">
         <h1 className="text-6xl md:text-7xl font-extrabold text-gray-900 mb-6 leading-tight">
           <span className="bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent drop-shadow-sm">
             MingleUp
@@ -103,7 +103,7 @@ const slides: Slide[] = [
     id: "team",
     label: "Team",
     content: (
-      <motion.div className="max-w-6xl mx-auto text-center">
+      <motion.div className="max-w-6xl mx-auto text-center scale-[1.1] origin-top">
         <h2 className="text-5xl font-bold text-gray-900 mb-10">팀 소개</h2>
         <p className="text-gray-700 text-lg mb-12 leading-relaxed max-w-3xl mx-auto">
           <span className="font-semibold text-pink-600">MingleUp</span>은 기획부터 개발, 배포까지 전 과정을 함께한 팀의 협업으로 완성되었습니다.
@@ -179,7 +179,7 @@ const slides: Slide[] = [
     id: "intro",
     label: "Intro",
     content: (
-      <motion.div className="max-w-5xl mx-auto text-center">
+      <motion.div className="max-w-5xl mx-auto text-center scale-[1.2] origin-top">
         <h2 className="text-5xl font-bold text-gray-900 mb-8">MingleUp이 만들어진 이유</h2>
         <p className="text-gray-700 text-lg mb-10 leading-relaxed max-w-3xl mx-auto">
           외로움이 사회 문제로 대두되며, 정부와 사회는 새로운 연결의 방식을 찾고 있습니다.<br />
@@ -215,7 +215,7 @@ const slides: Slide[] = [
     id: "problem",
     label: "Problem",
     content: (
-      <motion.div className="max-w-5xl text-center mx-auto">
+      <motion.div className="max-w-5xl text-center mx-auto scale-[1.2] origin-top">
         <h2 className="text-5xl font-bold text-gray-900 mb-8">
           왜 <span className="text-pink-500">AI 매칭</span>이 필요한가?
         </h2>
@@ -245,7 +245,7 @@ const slides: Slide[] = [
     id: "solution",
     label: "Solution",
     content: (
-      <motion.div className="max-w-5xl text-center mx-auto">
+      <motion.div className="max-w-5xl text-center mx-auto scale-[1.2] origin-top">
         <h2 className="text-5xl font-bold text-gray-900 mb-8">
           MingleUp의 <span className="text-pink-500">AI 매칭 솔루션</span>
         </h2>
@@ -278,7 +278,7 @@ const slides: Slide[] = [
     id: "flow",
     label: "Flow",
     content: (
-      <motion.div className="max-w-6xl mx-auto text-center">
+      <motion.div className="max-w-6xl mx-auto text-center scale-[1.2] origin-top">
         <h2 className="text-5xl font-bold text-gray-900 mb-10">
           유저 플로우
         </h2>
@@ -334,11 +334,6 @@ const slides: Slide[] = [
                   {step.desc}
                 </p>
               </div>
-  
-              {/* 연결 라인 */}
-              {i < 5 && (
-                <div className="hidden md:block absolute top-1/2 right-0 w-full border-t-2 border-dashed border-pink-200 translate-x-1/2"></div>
-              )}
             </div>
           ))}
         </div>
@@ -446,7 +441,7 @@ const slides: Slide[] = [
     id: "infra",
     label: "Infra",
     content: (
-      <motion.div className="max-w-5xl text-center mx-auto">
+      <motion.div className="max-w-5xl text-center mx-auto scale-[1.2] origin-top">
         <h2 className="text-5xl font-bold text-gray-900 mb-8">
           인프라 & 배포 파이프라인
         </h2>
@@ -490,7 +485,7 @@ const slides: Slide[] = [
     id: "ai",
     label: "AI Matching",
     content: (
-      <motion.div className="max-w-5xl text-center mx-auto">
+      <motion.div className="max-w-5xl text-center mx-auto scale-[1.2] origin-top">
         <h2 className="text-5xl font-bold text-gray-900 mb-8">
           AI 매칭 로직
         </h2>
@@ -610,7 +605,7 @@ const slides: Slide[] = [
     id: "future",
     label: "Future",
     content: (
-      <motion.div className="max-w-4xl text-center mx-auto">
+      <motion.div className="max-w-4xl text-center mx-auto scale-[1.2] origin-top">
         <h2 className="text-5xl font-bold text-gray-900 mb-8">
           향후 기술 확장 계획
         </h2>
@@ -639,7 +634,7 @@ const slides: Slide[] = [
     id: "roadmap",
     label: "Roadmap",
     content: (
-      <motion.div className="max-w-6xl mx-auto text-center">
+      <motion.div className="max-w-6xl mx-auto text-center scale-[1.2] origin-top">
         <h2 className="text-5xl font-bold text-gray-900 mb-6">Roadmap</h2>
         <p className="text-gray-700 text-lg mb-10 leading-relaxed max-w-3xl mx-auto">
           MingleUp은 <b>단기 검증 → 기능 확장 → 플랫폼화</b>의 3단계로 성장합니다.
@@ -730,7 +725,7 @@ const slides: Slide[] = [
     id: "closing",
     label: "Closing",
     content: (
-      <motion.div className="text-center max-w-3xl mx-auto">
+      <motion.div className="text-center max-w-3xl mx-auto scale-[1.2] origin-top">
         <h2 className="text-5xl font-bold text-gray-900 mb-8">
           AI가 만들어주는 새로운 만남의 시작,{" "}
           <span className="text-pink-500">MingleUp</span>
@@ -739,20 +734,6 @@ const slides: Slide[] = [
           사람과 사람의 연결, 그것이 우리가 기술을 사용하는 이유입니다.<br />
           지금, 당신의 리듬에 맞춘 만남을 시작해보세요.
         </p>
-        <div className="flex justify-center gap-4">
-          <a
-            href="https://github.com/Goorm-MingleUp"
-            className="px-6 py-3 border border-pink-300 text-gray-800 rounded-full hover:bg-pink-50 transition"
-          >
-            GitHub 바로가기
-          </a>
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="px-6 py-3 bg-pink-300 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition"
-          >
-            처음으로
-          </button>
-        </div>
       </motion.div>
     ),
   },
